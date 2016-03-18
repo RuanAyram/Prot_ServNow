@@ -1,0 +1,33 @@
+<ion-view view-title="Mapa">
+      <ion-content scroll="false">
+        <ng-map id="ng-map"
+                zoom="16"
+                center="[40.74, -74.18]"
+                map-type-id="MapTypeId.ROADMAP"
+                data-tap-disabled="true">
+          <marker position="current"
+                  centered="true"
+                  id="foo"
+                  title="Sua Localização!"
+                  icon="img\mapa\SN_Marker.png"
+                  on-click="map.showInfoWindow('bar')">
+          </marker>
+          <info-window id="bar" visible-on-marker="foo">
+            <div ng-non-bindable="">
+              Nome_Usuario
+              <p></p>
+              Serviço: <i class="icon ion-star">5</i>
+              <p></p>
+              <span style="background-color: orange">
+                <u><b>Tags_Serviço</b></u>
+              </span>
+              <p></p>
+              <a href="#">Chat!</a>
+            </div>
+          </info-window>
+        </ng-map>
+      </ion-content>
+      <ion-footer-bar class="bar-dark">
+        <button class="button button-clear button-positive" href="#/app/cadastar">Cadastre-se!</button>
+      </ion-footer-bar>
+    </ion-view>
